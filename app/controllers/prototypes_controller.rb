@@ -30,11 +30,9 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    @prototype.update(prototype_params)
-    if @prototype.save
+    if @prototype.update(prototype_params)
       redirect_to action: :show
     else
-      @prototype.update(prototype_params)
       render action: :edit
     end
   end
